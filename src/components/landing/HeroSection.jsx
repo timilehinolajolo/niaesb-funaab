@@ -3,7 +3,6 @@ import { FiArrowRight } from 'react-icons/fi';
 import landingVideo from '../../assets/landing/landing-video.mp4';
 
 const HeroSection = () => {
-  // Staggering the entrance of each element
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -15,7 +14,6 @@ const HeroSection = () => {
     },
   };
 
-  // 3D Flip & Mask Reveal for typography
   const textRevealVariants = {
     hidden: { 
       opacity: 0, 
@@ -37,7 +35,6 @@ const HeroSection = () => {
     },
   };
 
-  // Smooth blur-in for the subtext
   const blurInVariants = {
     hidden: { opacity: 0, filter: "blur(15px)", y: 20 },
     visible: { 
@@ -48,7 +45,6 @@ const HeroSection = () => {
     }
   };
 
-  // Explosive spring pop for the buttons
   const buttonGroupVariants = {
     hidden: { opacity: 0, scale: 0.8, y: 20 },
     visible: { 
@@ -60,9 +56,9 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative w-full h-[85vh] min-h-[600px] flex items-center overflow-hidden perspective-1000">
+    <section className="relative w-full min-h-[85vh] flex items-center overflow-hidden perspective-1000 -mt-28 md:-mt-32 pt-[12rem] md:pt-[14rem] pb-16">
       
-      {/* Video Background with slow zoom-out entrance */}
+      {/* Video Background */}
       <motion.div 
         initial={{ scale: 1.15 }}
         animate={{ scale: 1 }}
@@ -84,8 +80,8 @@ const HeroSection = () => {
       {/* Complex Gradient Overlay */}
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-[#04331A]/95 via-[#04331A]/60 to-transparent z-10" />
 
-      {/* Main Container - Standardized Padding & Sizing */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-20 w-full mt-16 lg:mt-0">
+      {/* Main Container */}
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-20 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
           <motion.div 
@@ -118,7 +114,6 @@ const HeroSection = () => {
               variants={buttonGroupVariants} 
               className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto font-mono"
             >
-              {/* Primary Button */}
               <motion.a 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -130,7 +125,6 @@ const HeroSection = () => {
                 <FiArrowRight className="text-xl group-hover:translate-x-1 transition-transform" />
               </motion.a>
 
-              {/* Secondary Button */}
               <motion.a 
                 whileHover={{ scale: 1.05, backgroundColor: "rgba(240,253,244,0.1)" }}
                 whileTap={{ scale: 0.95 }}
@@ -145,7 +139,6 @@ const HeroSection = () => {
         </div>
       </div>
       
-      {/* Required custom animation for the button sheen */}
       <style>{`
         @keyframes shimmer {
           100% { transform: translateX(100%); }
