@@ -13,7 +13,7 @@
     <meta name="title" content="NIAESB FUNAAB" />
     <meta name="description" content="Nigerian Institution of Agricultural Engineers Students' Branch (NIAESB) at the Federal University of Agriculture, Abeokuta (FUNAAB). Pay dues, access the e-library, and connect with peers." />
     
-    <!-- 3. Structured Data (JSON-LD) for Google Sitelinks -->
+    <!-- 3. Structured Data (JSON-LD) for Google Sitelinks & Navigation Elements -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -25,6 +25,40 @@
       "sameAs": [
         "https://twitter.com/niaesbfunaab",
         "https://linkedin.com/company/niaesbfunaab"
+      ]
+    }
+    </script>
+
+    <!-- 4. Site Navigation Schema to encourage Sitelinks display -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "SiteNavigationElement",
+          "position": 1,
+          "name": "Pay Dues",
+          "url": "https://niaesbfunaab.dev/pay-dues"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 2,
+          "name": "E-Library",
+          "url": "https://niaesbfunaab.dev/library"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 3,
+          "name": "Lecturers Directory",
+          "url": "https://niaesbfunaab.dev/lecturers"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 4,
+          "name": "About NIAESB",
+          "url": "https://niaesbfunaab.dev/about"
+        }
       ]
     }
     </script>
