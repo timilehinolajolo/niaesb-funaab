@@ -1,3 +1,4 @@
+import SEO from '../components/SEO';
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiCalendar, FiClock, FiMapPin, FiArrowRight, FiAward, FiVideo, FiFileText, FiInbox } from 'react-icons/fi';

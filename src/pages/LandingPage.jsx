@@ -1,3 +1,4 @@
+import SEO from '../components/SEO';
 import HeroSection from '../components/landing/HeroSection';
 import AboutSection from '../components/landing/AboutSection';
 import QuickAccess from '../components/landing/QuickAccess';

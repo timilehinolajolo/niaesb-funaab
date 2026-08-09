@@ -1,3 +1,4 @@
+import SEO from '../components/SEO';
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FiAward, FiBookOpen, FiUser, FiStar, FiLinkedin, FiTwitter, FiMail } from 'react-icons/fi';
