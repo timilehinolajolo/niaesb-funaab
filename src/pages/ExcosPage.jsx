@@ -21,9 +21,10 @@ import rhodaImg from '../assets/presidents/rhoda.jpg';
 import temitopeImg from '../assets/presidents/temitope.jpg';
 import samuelImg from '../assets/presidents/samuel.jpg';
 // HOCs
+import hadiImg from '../assets/hoc/hadi.jpg';
 import akintolaImg from '../assets/executives/akintola.jpg';
 import gbengaImg from '../assets/hoc/gbenga.jpg';
-import timilehinImg from '../assets/hoc/timilehin.jpg';
+import timilehinImg from '../assets/hoc/timi.jpg';
 
 // DATA ARRAYS
 const topExecutives = [
@@ -52,8 +53,8 @@ const pastPresidents = [
 const hocs = [
   { level: "500L", name: "Taiwo Timilehin Olajolo", image: timilehinImg, status: "Active" },
   { level: "400L", name: "Gbenga Michael Daniel", image: gbengaImg, status: "Active" },
-  { level: "300L", name: "Akintola", image: akintolaImg, status: "Active" },
-  { level: "200L", name: "To Be Announced", image: null, status: "Pending" },
+  { level: "300L", name: "Akintola Emmanuel Iyanuoluwa", image: akintolaImg, status: "Active" },
+  { level: "200L", name: "Adegbola Hadi Lawal", image: hadiImg, status: "Active" },
   { level: "100L", name: "Awaiting Election", image: null, status: "Pending" },
 ];
 
@@ -347,20 +348,23 @@ const ExcosPage = () => {
 
       {/* HOCs */}
       <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-20 mb-20">
-        <div className="bg-white rounded-[3rem] p-10 md:p-16 border border-[#04331A]/10 shadow-[0_30px_60px_-15px_rgba(4,51,26,0.05)] relative overflow-hidden">
+        {/* FIX 1: Reduced mobile padding to p-6 and border radius to 2rem for a tighter fit */}
+        <div className="bg-white rounded-[2rem] md:rounded-[3rem] p-6 md:p-16 border border-[#04331A]/10 shadow-[0_30px_60px_-15px_rgba(4,51,26,0.05)] relative overflow-hidden">
           
           <div className="absolute top-0 right-0 w-64 h-64 bg-green-50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-50/50 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
 
-          <div className="mb-16 flex flex-col md:flex-row justify-between items-end gap-8 relative z-10">
+          {/* FIX 2: Changed items-end to items-start for mobile, keeping md:items-end for desktop */}
+          <div className="mb-10 md:mb-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 md:gap-8 relative z-10">
             <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 text-[#10B981] font-black uppercase tracking-[0.2em] text-sm mb-4">
+              <div className="inline-flex items-center gap-2 text-[#10B981] font-black uppercase tracking-[0.2em] text-xs md:text-sm mb-4">
                 <FiBookOpen size={18} /> Academic Pillars
               </div>
-              <h2 className="text-4xl md:text-5xl font-black text-[#04331A] tracking-tight mb-4">
+              {/* FIX 3: Reduced mobile font size to 3xl to prevent word-wrap breaking */}
+              <h2 className="text-3xl md:text-5xl font-black text-[#04331A] tracking-tight mb-4 break-words">
                 Class <span className="text-[#07562C]">Representatives.</span>
               </h2>
-              <p className="text-[#04331A]/60 font-medium text-lg leading-relaxed">
+              <p className="text-[#04331A]/60 font-medium text-base md:text-lg leading-relaxed">
                 The vital communication bridge linking the student body to the academic administration across all university levels.
               </p>
             </div>
@@ -379,7 +383,7 @@ const ExcosPage = () => {
                 variants={fadeUp}
                 className="bg-white rounded-[2rem] p-6 border border-[#04331A]/10 hover:border-[#10B981]/30 transition-all duration-300 group text-center flex flex-col items-center shadow-sm hover:shadow-xl hover:shadow-[#10B981]/5"
               >
-                <div className="w-28 h-28 rounded-full overflow-hidden mb-6 border-4 border-[#04331A]/5 group-hover:border-[#10B981]/20 shadow-md relative bg-[#04331A]/5 transition-colors">
+                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden mb-6 border-4 border-[#04331A]/5 group-hover:border-[#10B981]/20 shadow-md relative bg-[#04331A]/5 transition-colors">
                   {hoc.status === "Pending" ? (
                     <div className="w-full h-full flex items-center justify-center text-[#04331A]/20">
                       <FiUser className="text-4xl" />
@@ -404,7 +408,6 @@ const ExcosPage = () => {
           </motion.div>
         </div>
       </div>
-
     </div>
   );
 };
